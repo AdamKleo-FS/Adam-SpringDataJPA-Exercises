@@ -27,13 +27,13 @@ public class Publisher {
 
     @Column(name = "publisher_name", nullable = false)
     @NotBlank(message = "Publisher name cannot be null or blank.")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Publisher name can only contain letters.")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Publisher name can only contain letters.")
     @Size(min = 3, max = 15, message = "Publisher name must be between 3 and 15 characters")
     private String name;
 
     @Column(name = "legal_name", nullable = false)
     @NotBlank(message = "Publisher legal name name cannot be null or blank.")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Publisher legal name can only contain letters.")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Publisher legal name can only contain letters.")
     @Size(min = 3, max = 15, message = "Publisher legal name must be between 3 and 15 characters")
     private String legalName;
 

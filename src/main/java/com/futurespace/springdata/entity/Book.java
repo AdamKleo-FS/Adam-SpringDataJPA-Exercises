@@ -13,13 +13,14 @@ public class Book {
     @Id
     @Column(
             name = "ISBN",
-            updatable = false
+            updatable = false,
+            nullable = false
     )
     @Pattern(
             regexp = "^(?:\\d{9}[\\dXx]|\\d{13})$",
             message = "Invalid ISBN format. Must be 10 or 13 digits, with optional 'X' for ISBN-10."
     )
-    private String ISBN;
+    private String isbn;
 
     @Column(
             name = "book_title",
@@ -57,9 +58,9 @@ public class Book {
     )
     private Set<Publisher> publishers = new HashSet<>();
 
-    public Book(Genre genre, String ISBN, LocalDate publicationDate, String title) {
+    public Book(Genre genre, String isbn, LocalDate publicationDate, String title) {
         this.genre = genre;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.publicationDate = publicationDate;
         this.title = title;
     }
@@ -76,8 +77,8 @@ public class Book {
         this.genre = genre;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
     public LocalDate getPublicationDate() {
@@ -115,7 +116,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "ISBN='" + ISBN + '\'' +
+                "ISBN='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", publicationDate=" + publicationDate +
                 ", genre=" + (genre != null ? genre.getName() : "null") + // Avoid LazyException
