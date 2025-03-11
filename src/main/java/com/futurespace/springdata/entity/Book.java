@@ -22,6 +22,7 @@ public class Book {
     )
     private String isbn;
 
+
     @Column(
             name = "book_title",
             nullable = false
@@ -29,6 +30,7 @@ public class Book {
     @NotBlank(message = "Book title cannot be empty")
     @Size(max = 100, message = "Book title cannot exceed 100 characters")
     private String title;
+
 
     @Column(name = "book_publication_date", nullable = false)
     @NotNull(message = "Publication date cannot be null")
@@ -42,6 +44,7 @@ public class Book {
     @NotNull(message = "Genre cannot be null")
     private Genre genre;
 
+
     @ManyToMany
     @JoinTable(
             name = "WrittenBy",
@@ -50,6 +53,8 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
+
+    // Join Table that represents the publisher and books that they publish
     @ManyToMany
     @JoinTable(
             name = "PublishedBy",
@@ -58,6 +63,8 @@ public class Book {
     )
     private Set<Publisher> publishers = new HashSet<>();
 
+
+    // Constructor
     public Book(Genre genre, String isbn, LocalDate publicationDate, String title) {
         this.genre = genre;
         this.isbn = isbn;
@@ -65,10 +72,12 @@ public class Book {
         this.title = title;
     }
 
+    // Empty Constructor
     public Book() {
 
     }
 
+    // Getters and setters
     public Genre getGenre() {
         return genre;
     }

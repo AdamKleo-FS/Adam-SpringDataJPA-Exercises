@@ -30,14 +30,14 @@ public class Author {
 
     @Column(name = "first_name", nullable = false)
     @NotBlank(message="First name cannot be null or blank.")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "First name can only contain letters.")
-    @Size(min = 3, max = 15, message = "First name must be between 3 and 15 characters")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "First name can only contain letters.")
+    @Size(min = 3, max = 40, message = "First name must be between 3 and 15 characters")
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
     @NotBlank(message="Last name cannot be null or blank.")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Last name can only contain letters.")
-    @Size(min = 3, max = 15, message = "Last name must be between 3 and 15 characters")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Last name can only contain letters.")
+    @Size(min = 3, max = 40, message = "Last name must be between 3 and 15 characters")
     private String lastName;
 
     @Column(name = "birth_date")

@@ -6,6 +6,10 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Optional;
 
+/*
+Boilerplate service for all the other entity services to extend.
+Each individual service can then add its own functionality, unique to it
+ */
 public abstract class BaseService<T, ID> {
 
     protected final JpaRepository<T, ID> repository;
