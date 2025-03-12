@@ -6,6 +6,7 @@
 - Look into DTO (data transfer objects), it might be of use.
 - Find a better way to test the CRUD operations, surely having so many postman requests is not the best way to do it 
 
+All documentation, screenshots, execution summaries, query reuslts, etc are included in `src/docs`
 
 ## Project Structure
 ```
